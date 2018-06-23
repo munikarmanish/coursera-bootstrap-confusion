@@ -6,5 +6,6 @@ practice Bootstrap 4.
 To see it in action:
 
 1. Clone this repo
-2. `npm install`
-3. `npm start`
+2. `npm install` (_to install npm dependencies_)
+3. `npm scss` (_to compile SCSS files_)
+4. `npm start` (_to start local web server_)
