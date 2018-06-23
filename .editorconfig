@@ -9,5 +9,5 @@ indent_style = space
 indent_size = 2
 charset = utf-8
 
-[*.{css,md,less,scss,sass}]
+[*.{css,md,less,scss,sass,json}]
 indent_size = 4
