@@ -1,29 +1,43 @@
 {
-    "name": "confusion",
-    "version": "1.0.0",
-    "description": "This is a website for Ristorante Con Fusion",
-    "main": "index.html",
-    "scripts": {
-        "start": "npm run watch:all",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lite": "lite-server",
-        "scss": "node-sass -o css/ css/",
-        "watch:scss": "onchange 'css/*.scss' -- npm run scss",
-        "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
-    },
-    "author": "Manish Munikar",
-    "license": "ISC",
-    "devDependencies": {
-        "lite-server": "^2.3.0",
-        "node-sass": "^4.7.2",
-        "onchange": "^3.3.0",
-        "parallelshell": "^3.0.2"
-    },
-    "dependencies": {
-        "bootstrap": "^4.0.0",
-        "bootstrap-social": "^5.1.1",
-        "font-awesome": "^4.7.0",
-        "jquery": "^3.3.1",
-        "popper.js": "^1.12.9"
-    }
+  "name": "confusion",
+  "version": "1.0.0",
+  "description": "This is a website for Ristorante Con Fusion",
+  "repository": "https://github.com/munikarmanish/coursera-boostrap-confusion",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin contactus.html -d dist --htmlmin -o dist/contactus.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+  },
+  "author": "Manish Munikar",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "imagemin-cli": "^3.0.0",
+    "less": "^3.0.4",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.5.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
 }
